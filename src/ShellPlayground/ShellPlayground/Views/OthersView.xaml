@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShellPlayground.Views.OthersView">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Button
+                    Text="Expand Search"
+                    Clicked="OnExpandSearchClicked"/>
+                <Button
+                    Text="Collapse Search"
+                    Clicked="OnCollapseSearchClicked"/>
+                <Button 
+                    Text="Hide Search"
+                    Clicked="OnHideSearchClicked"/>
+                <Button 
+                    Text="Hide Tabs"
+                    Clicked="OnHideTabsClicked"/>
+                <Button 
+                    Text="Show Tabs"
+                    Clicked="OnShowTabsClicked"/>
+                <Button 
+                    Text="Hide Nav"
+                    Clicked="OnHideNavClicked"/>
+                <Button 
+                    Text="Show Nav"
+                    Clicked="OnShowNavClicked"/>
+                <Button 
+                    Text="Add TitleView"
+                    Clicked="OnAddTitleViewClicked"/>
+                <Button 
+                    Text="Remove TitleView"
+                    Clicked="OnRemoveTitleViewClicked"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

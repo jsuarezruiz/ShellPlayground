@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShellPlayground.Views.NavigationView">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Button
+                    Text="Push"
+                    Clicked="OnPushClicked"/>
+                <Button
+                    Text="Pop"
+                    Clicked="OnPopClicked"/>
+                <Button
+                    Text="Pop To Root"
+                    Clicked="OnPopToRootClicked"/>
+                <Button
+                    Text="New Navigation Model"
+                    Clicked="OnNewNavigationClicked"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

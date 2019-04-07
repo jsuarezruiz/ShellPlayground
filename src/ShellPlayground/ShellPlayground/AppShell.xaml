@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:ShellPlayground.Views"
+    x:Class="ShellPlayground.AppShell"
+    Route="playground"
+	RouteHost="shell"
+	RouteScheme="app"
+    Title="Shell Playground"
+    Navigating="OnShellNavigating">
+    <Shell.Resources>
+        
+        <Style x:Key="BaseStyle" TargetType="Element">
+            <Setter Property="Shell.ShellBackgroundColor" Value="#8fa7b2" />
+            <Setter Property="Shell.ShellForegroundColor" Value="White" />
+            <Setter Property="Shell.ShellTitleColor" Value="White" />
+            <Setter Property="Shell.ShellDisabledColor" Value="#B4FFFFFF" />
+            <Setter Property="Shell.ShellUnselectedColor" Value="#95FFFFFF" />
+        </Style>
+        
+        <Style TargetType="ShellItem" BasedOn="{StaticResource BaseStyle}" />
+        <Style x:Key="GreenShell" TargetType="Element" BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.ShellBackgroundColor" Value="#74b240" />
+        </Style>
+
+        <Style x:Key="TopTab1Shell" TargetType="Element" BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.ShellBackgroundColor" Value="#ff3d46" />
+        </Style>
+        
+        <Style x:Key="TopTab2Shell" TargetType="Element" BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.ShellBackgroundColor" Value="#10b262" />
+        </Style>
+
+    </Shell.Resources>
+    <Shell.FlyoutHeader>
+        <Grid
+            BackgroundColor="White"
+            HeightRequest="100">
+            <Label 
+                Text="Header"
+                FontSize="24"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"/>
+        </Grid>
+    </Shell.FlyoutHeader>
+    <Shell.MenuItems>
+        <MenuItem
+            Text="MenuItem 1" />
+        <MenuItem
+            Text="MenuItem 2" />
+        <MenuItem
+            Text="MenuItem 3" />
+        <MenuItem
+            Text="MenuItem 4" />
+        <MenuItem
+            Text="MenuItem 5" />
+    </Shell.MenuItems>
+    <ShellItem 
+        Title="Main Content"
+        Route="maincontent">
+        <ShellSection 
+            Title="Bottom Tab1"
+            Route="bottomtab1">
+            <ShellContent 
+                Title="Top Tab 1"
+                Route="toptab1"
+                Style="{StaticResource TopTab1Shell}">
+                <views:NavigationView/>
+            </ShellContent>
+            <ShellContent 
+                Title="Top Tab 2"
+                Route="toptab2"
+                Style="{StaticResource TopTab2Shell}">
+                <views:OthersView/>
+            </ShellContent>
+        </ShellSection>
+        <ShellSection 
+            Title="Bottom Tab 2"
+            Route="bottomtab2">
+            <ShellContent
+                Route="custom">
+                <views:OthersView/>
+            </ShellContent>
+        </ShellSection>
+    </ShellItem>
+    <ShellItem
+        Title="Secondary Content">
+        <ShellSection>
+            <ShellContent 
+                Style="{StaticResource TopTab1Shell}">
+                <views:NavigationView/>
+            </ShellContent>
+        </ShellSection>
+    </ShellItem>
+</Shell>
